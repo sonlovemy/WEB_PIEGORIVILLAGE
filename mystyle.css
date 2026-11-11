@@ -1,0 +1,1329 @@
+/* Pierogi Village - GRC 275B student website */
+*  {
+     box-sizing: border-box;
+}
+
+body  {
+     margin: 0;
+     font-family: Arial, Helvetica, sans-serif;
+     color: #111;
+     background: white;
+}
+
+a  {
+     text-decoration: none;
+     color: inherit;
+}
+
+button  {
+     font-family: inherit;
+     cursor: pointer;
+}
+
+.site-header  {
+     height: 112px;
+     background: white;
+}
+
+.nav-inner  {
+     max-width: 1120px;
+     margin: auto;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 8px 24px;
+}
+
+.logo img  {
+     width: 185px;
+     height: 104px;
+     object-fit: contain;
+}
+
+.desktop-nav  {
+     display: flex;
+     align-items: center;
+     gap: 30px;
+     font-size: 17px;
+}
+
+.desktop-nav a:hover, .desktop-nav a.active  {
+     color: #c51d36;
+}
+
+.red-button, .order  {
+     background: #c8203b;
+     color: white !important;
+     border: 0;
+     border-radius: 28px;
+     padding: 11px 19px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 6px;
+     font-size: 12px;
+     font-weight: bold;
+}
+
+.red-button:hover, .order:hover  {
+     background: #a8172c;
+}
+
+.ico  {
+     width: 24px;
+     height: 24px;
+     flex: none;
+}
+
+.order .ico, .checkout .ico  {
+     width: 16px;
+     height: 16px;
+}
+
+.hero  {
+     height: 340px;
+     background: url("images/hero.webp") center 22% / cover no-repeat;
+     position: relative;
+}
+
+.hero-message  {
+     padding: 125px 0 0 max(25px, calc((100vw - 1100px) / 2));
+     color: #c8203b;
+}
+
+.hero h1  {
+     font-size: 22px;
+     margin: 0;
+     line-height: 1.08;
+}
+
+.hero p  {
+     font-size: 14px;
+     margin: 3px 0 15px;
+}
+
+.hero .red-button  {
+     font-size: 11px;
+     margin-right: 10px;
+     padding: 10px 17px;
+}
+
+.home-categories  {
+     background: #f9d6d4;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 18px;
+     padding: 28px max(30px, calc((100vw - 1000px)/2));
+}
+
+.home-category  {
+     position: relative;
+     height: 260px;
+     overflow: hidden;
+}
+
+.home-category img  {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+
+.home-category:after  {
+     content: "";
+     position: absolute;
+     inset: 45% 0 0;
+     background: linear-gradient(transparent,rgba(0,0,0,.45));
+}
+
+.home-category span  {
+     position: absolute;
+     z-index: 1;
+     top: 65%;
+     left: 0;
+     width: 100%;
+     text-align: center;
+     color: white;
+     font-size: 21px;
+     font-weight: bold;
+     text-shadow: 0 1px 3px #333;
+}
+
+.footer  {
+     background: #c82038;
+     color: white;
+     padding: 26px 24px;
+}
+
+.footer-inner  {
+     max-width: 1120px;
+     margin: auto;
+     display: grid;
+     grid-template-columns: 1fr 1.25fr 1fr 1.3fr;
+     gap: 15px;
+}
+
+.foot-col  {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+}
+
+.foot-col .ico  {
+     width: 55px;
+     height: 55px;
+     stroke: black;
+     stroke-width: 1.8;
+}
+
+.foot-col strong  {
+     font-size: 14px;
+     display: block;
+     margin-bottom: 12px;
+}
+
+.foot-col small  {
+     display: block;
+     font-size: 10px;
+     line-height: 1.3;
+}
+
+.about-section  {
+     max-width: 1050px;
+     margin: 20px auto 24px;
+     padding: 0 24px;
+}
+
+.restaurant-photo  {
+     height: 340px;
+     border: 1px solid #ddd;
+     display: flex;
+     justify-content: center;
+     overflow: hidden;
+}
+
+.restaurant-photo img  {
+     height: 100%;
+     width: auto;
+     max-width: 100%;
+     object-fit: cover;
+}
+
+.about-section p  {
+     font-size: 14px;
+     line-height: 2.15;
+     margin: 18px 36px 0;
+}
+
+.menu-section  {
+     max-width: 1100px;
+     padding: 20px 22px 55px;
+     margin: auto;
+}
+
+.menu-heading  {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     color: #c82038;
+     font-size: 30px;
+     margin: 38px 0 18px;
+     font-weight: 600;
+     text-align: center;
+}
+
+.menu-heading:before, .menu-heading:after  {
+     content: "";
+     flex: 1;
+     height: 1px;
+     background: #ccc;
+}
+
+.food-grid  {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 30px 26px;
+}
+
+.food-card  {
+     height: 295px;
+     position: relative;
+     overflow: hidden;
+     background: #eee;
+     cursor: pointer;
+     border: 0;
+     padding: 0;
+     text-align: center;
+}
+
+.food-card img  {
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+}
+
+.food-card .food-name  {
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     min-height: 62px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     padding: 7px 8px;
+     background: rgba(0,0,0,.60);
+     color: white;
+     font-size: 19px;
+     font-weight: bold;
+     line-height: 1.15;
+}
+
+.food-card .food-name small  {
+     display: block;
+     font-size: 18px;
+     margin-top: 4px;
+}
+
+.food-card:hover  {
+     outline: 3px solid #c82038;
+}
+
+.cart-section  {
+     background: #f9d6d4;
+     min-height: 470px;
+     position: relative;
+     padding: 28px 25px 100px;
+}
+
+#cartItems  {
+     max-width: 800px;
+     margin: auto;
+}
+
+.cart-line  {
+     display: flex;
+     justify-content: space-between;
+     gap: 15px;
+     padding: 12px;
+     background: rgba(255,255,255,.6);
+     margin: 10px 0;
+     align-items: center;
+}
+
+.cart-line button  {
+     background: white;
+     border: 1px solid #b82035;
+     padding: 6px 10px;
+}
+
+.cart-bottom  {
+     text-align: center;
+}
+
+.cart-bottom .checkout  {
+     margin-top: 8px;
+     font-size: 17px;
+     padding: 13px 27px;
+}
+
+.checkout-message  {
+     font-size: 13px;
+}
+
+.facebook-section  {
+     min-height: 470px;
+     background: #f9d6d4;
+     text-align: center;
+     padding: 25px;
+}
+
+.mobile-controls, .mobile-drawer, .mobile-page-title  {
+     display: none;
+}
+
+@media(max-width: 700px)  {
+    
+  .site-header  {
+     height: 53px;
+}
+
+  .nav-inner  {
+     padding: 4px 10px;
+}
+
+  .logo img  {
+     width: 94px;
+     height: 43px;
+}
+
+  .desktop-nav  {
+     display: none;
+}
+
+  .mobile-controls  {
+     display: flex;
+     align-items: center;
+     gap: 14px;
+}
+
+  .mobile-controls .ico  {
+     width: 30px;
+     height: 30px;
+}
+
+  .mobile-controls .back  {
+     background: #c82038;
+     border-radius: 25px;
+     color: black;
+     width: 36px;
+     height: 18px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+  .mobile-controls .back .ico  {
+     width: 19px;
+     height: 19px;
+}
+
+  .hamburger  {
+     border: 0;
+     background: transparent;
+     color: #888;
+     padding: 0;
+}
+
+  .hamburger .ico  {
+     width: 35px;
+     height: 35px;
+}
+
+  .mobile-drawer.open  {
+     display: block;
+     position: absolute;
+     z-index: 20;
+     left: 0;
+     top: 53px;
+     width: 100%;
+     min-height: 470px;
+     background: #f9d6d4;
+}
+
+  .drawer-logo  {
+     width: 130px;
+     height: 85px;
+     object-fit: contain;
+     margin: 4px 15px;
+}
+
+  .drawer-content  {
+     background: url("images/piere.png") left 10px center / 130px auto no-repeat;
+     min-height: 330px;
+     padding: 10px 0 15px 135px;
+     display: flex;
+     flex-direction: column;
+     gap: 24px;
+     align-items: flex-start;
+}
+
+  .drawer-content a  {
+     font-size: 18px;
+     color: #c82038;
+}
+
+  .drawer-content .order  {
+     font-size: 11px;
+     color: white;
+}
+
+  .mobile-page-title  {
+     display: block;
+     text-align: center;
+     background: #ff7077;
+     color: #111;
+     font-size: 21px;
+     margin: 0 0 12px;
+     padding: 7px;
+}
+
+  .hero  {
+     height: 230px;
+     background-position: center 22%;
+}
+
+  .hero-message  {
+     padding: 15px 8px;
+}
+
+  .hero h1  {
+     font-size: 15px;
+}
+
+  .hero p  {
+     font-size: 10px;
+}
+
+  .hero .red-button  {
+     padding: 6px 8px;
+     font-size: 9px;
+     margin-right: 3px;
+}
+
+  .home-categories  {
+     grid-template-columns: repeat(2,1fr);
+     gap: 8px;
+     padding: 12px 9px;
+}
+
+  .home-category  {
+     height: 185px;
+}
+
+  .home-category span  {
+     font-size: 16px;
+}
+
+  .footer  {
+     padding: 16px 8px;
+}
+
+  .footer-inner  {
+     grid-template-columns: repeat(2,minmax(0,1fr));
+     gap: 15px 8px;
+}
+
+  .foot-col  {
+     gap: 5px;
+}
+
+  .foot-col .ico  {
+     width: 36px;
+     height: 36px;
+}
+
+  .foot-col strong  {
+     font-size: 10px;
+     margin-bottom: 5px;
+}
+
+  .foot-col small  {
+     font-size: 8px;
+}
+
+  .about-section  {
+     padding: 0;
+     margin: 0;
+}
+
+  .restaurant-photo  {
+     height: 185px;
+     margin: 0 12px;
+}
+
+  .about-section p  {
+     font-size: 11px;
+     margin: 10px 15px;
+     line-height: 1.6;
+}
+
+  .menu-section  {
+     padding: 0 8px 12px;
+}
+
+  .menu-section .mobile-page-title  {
+     margin: 0 -8px 6px;
+     color: white;
+}
+
+  .menu-heading  {
+     font-size: 22px;
+     margin: 14px 0 10px;
+}
+
+  .menu-heading span  {
+     background: #c82038;
+     color: white;
+     border-radius: 20px;
+     padding: 1px 12px;
+}
+
+  .food-grid  {
+     grid-template-columns: repeat(2,minmax(0,1fr));
+     gap: 12px 10px;
+}
+
+  .food-card  {
+     height: 185px;
+}
+
+  .food-card .food-name  {
+     min-height: 45px;
+     font-size: 12px;
+     padding: 4px;
+}
+
+  .food-card .food-name small  {
+     font-size: 12px;
+}
+
+  .cart-section  {
+     min-height: 370px;
+     padding: 0 8px 35px;
+}
+
+  .cart-section .mobile-page-title  {
+     margin: 0 -8px;
+}
+
+  .cart-bottom  {
+     margin-top: 165px;
+}
+
+  .cart-bottom .checkout  {
+     font-size: 12px;
+     padding: 10px 22px;
+}
+
+  .facebook-section  {
+     min-height: 370px;
+     padding: 0;
+}
+
+  .facebook-section p, .facebook-section .red-button  {
+     margin: 25px;
+}
+
+}
+
+
+/* Small label to identify the new version */
+.version-note { text-align: center; font-size: 11px; padding: 5px; color: #777; background: #fff; }
+
+
+/* ==========================================
+   Layout fixes - desktop and mobile
+   This section keeps the page full width.
+   ========================================== */
+
+/* Remove white space under the footer on short pages */
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main > section {
+    width: 100%;
+}
+
+/* The header and footer colors reach both edges of the browser */
+.site-header {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Keep the navigation content centered but not the page background */
+.nav-inner {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* The about section is no longer a narrow box */
+.about-section {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 24px 5% 30px;
+}
+
+.restaurant-photo {
+    width: 100%;
+    max-width: 1150px;
+    height: 360px;
+    margin: 0 auto;
+}
+
+.restaurant-photo img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center 50%;
+}
+
+.about-section p {
+    max-width: 1150px;
+    margin: 20px auto 0;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Cart fills the available screen and checkout sits near the bottom */
+.cart-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    padding: 30px 5% 40px;
+}
+
+#cartItems {
+    width: 100%;
+}
+
+.cart-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Facebook page also fills the available space */
+.facebook-section {
+    flex: 1;
+}
+
+/* Full-width menu background, with a centered grid of dishes */
+.menu-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 20px 5% 50px;
+}
+
+#menuList {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Mobile version */
+@media (max-width: 700px) {
+    .about-section {
+        padding: 0 0 15px;
+    }
+
+    .restaurant-photo {
+        width: calc(100% - 24px);
+        height: 200px;
+        margin: 0 12px;
+    }
+
+    .about-section p {
+        margin: 12px 15px;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .cart-section {
+        min-height: 400px;
+        padding: 0 8px 20px;
+    }
+
+    .cart-bottom {
+        margin-top: auto;
+        padding-bottom: 12px;
+    }
+
+    .menu-section {
+        padding: 0 8px 15px;
+    }
+}
+
+
+/* About page changes - simple student CSS */
+@media (min-width: 701px) {
+    .about-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .restaurant-photo {
+        width: 90%;
+        max-width: 1200px;
+        height: 490px;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+    }
+
+    .restaurant-photo img {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .about-section p {
+        max-width: 950px;
+        margin-top: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 17px;
+        line-height: 2;
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .restaurant-photo {
+        height: 270px;
+        border: none;
+    }
+
+    .restaurant-photo img {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .about-section p {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+}
+
+
+/* Mobile menu - based on the Adobe XD layout */
+@media (max-width: 700px) {
+    .mobile-drawer.open {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        min-height: 0;
+        overflow-y: auto;
+        background: #f9d6d4;
+        z-index: 100;
+        padding-top: 22px;
+    }
+
+    .mobile-drawer .drawer-logo {
+        display: block;
+        width: 160px;
+        height: auto;
+        max-height: 115px;
+        margin: 0 auto 20px;
+        object-fit: contain;
+    }
+
+    .mobile-drawer .drawer-content {
+        background-image: url("images/piere.png");
+        background-repeat: no-repeat;
+        background-position: left 12px top 0;
+        background-size: 125px auto;
+        min-height: 350px;
+        padding: 18px 10px 35px 143px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .mobile-drawer .drawer-content a {
+        font-size: 17px;
+        font-weight: normal;
+        color: #cf1c37;
+        line-height: 1.2;
+    }
+
+    .mobile-drawer .drawer-content .order {
+        font-size: 11px;
+        color: white;
+        padding: 10px 12px;
+        white-space: nowrap;
+        margin-left: -10px;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    body.menu-open .site-header {
+        position: relative;
+        z-index: 101;
+        background: transparent;
+    }
+
+    body.menu-open .site-header .logo {
+        visibility: hidden;
+    }
+
+    body.menu-open .mobile-controls .hamburger {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 102;
+        color: #c82038;
+    }
+
+    body.menu-open .mobile-controls .hamburger::after {
+        content: "×";
+        font-size: 34px;
+        line-height: 1;
+    }
+
+    body.menu-open .mobile-controls .hamburger svg {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .mobile-drawer .drawer-content {
+        background-size: 108px auto;
+        padding-left: 123px;
+        gap: 23px;
+    }
+}
+
+
+/* Mobile navigation - Adobe XD layout, corrected */
+@media (max-width: 700px) {
+    .mobile-drawer.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100dvh;
+        min-height: 100vh;
+        background-color: #f9d6d4;
+        overflow-y: auto;
+        z-index: 200;
+        padding: 0;
+    }
+
+    .mobile-drawer .drawer-logo {
+        display: block;
+        width: 175px;
+        height: auto;
+        max-height: none;
+        margin: 38px auto 22px;
+        object-fit: contain;
+    }
+
+    .mobile-drawer .drawer-content {
+        position: relative;
+        background-image: none;
+        min-height: 410px;
+        padding: 35px 12px 35px 43%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .mobile-drawer .drawer-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 4%;
+        width: 37%;
+        height: 410px;
+        background-image: url("images/floral-menu.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: contain;
+        pointer-events: none;
+    }
+
+    .mobile-drawer .drawer-content a {
+        position: relative;
+        z-index: 1;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: #cf1c37;
+        text-decoration: none;
+    }
+
+    .mobile-drawer .drawer-content .order {
+        font-size: 11px;
+        color: #fff;
+        background: #c82038;
+        padding: 10px 14px;
+        margin: 0 0 0 -10px;
+        border-radius: 30px;
+        white-space: nowrap;
+    }
+
+    body.menu-open .site-header {
+        position: static;
+        background: transparent;
+    }
+
+    body.menu-open .mobile-controls .hamburger {
+        position: fixed;
+        z-index: 210;
+        top: 18px;
+        right: 17px;
+        color: #c82038;
+    }
+
+    body.menu-open .mobile-controls .hamburger::after {
+        content: "×";
+        font-size: 32px;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 360px) {
+    .mobile-drawer .drawer-logo {
+        width: 155px;
+    }
+
+    .mobile-drawer .drawer-content {
+        padding-left: 43%;
+        gap: 22px;
+    }
+
+    .mobile-drawer .drawer-content a {
+        font-size: 16px;
+    }
+}
+
+/* Small cart message */
+.added-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 360px;
+    padding: 14px 16px;
+    background: white;
+    color: #333;
+    border: 1px solid #eeeeee;
+    border-left: 4px solid #c82038;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.added-message.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.added-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    background: #c82038;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.added-message strong {
+    display: block;
+    font-size: 14px;
+}
+
+.added-message small {
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.added-message a {
+    color: #c82038;
+    font-size: 12px;
+    white-space: nowrap;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .added-message {
+        top: 12px;
+        right: 12px;
+        left: 12px;
+        max-width: none;
+    }
+}
+
+/* Cart page - food photos and simple order summary */
+.cart-section {
+    padding: 45px 20px 55px;
+    align-items: center;
+    gap: 0;
+}
+.cart-title {
+    font-size: 30px;
+    color: #bf1732;
+    margin: 0;
+    text-align: center;
+}
+.cart-subtitle {
+    text-align: center;
+    margin: 8px 0 35px;
+    font-size: 15px;
+}
+.cart-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: 12px;
+}
+.cart-heading h2 {
+    font-size: 19px;
+    margin: 0;
+    color: #aa1831;
+}
+.cart-heading span {
+    font-size: 14px;
+}
+#cartItems {
+    max-width: 850px;
+}
+.cart-line {
+    background: #fffafa;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px;
+    margin: 0 0 12px;
+    border-radius: 8px;
+    border: 1px solid #efc3c3;
+}
+.cart-photo {
+    width: 115px;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+.cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.cart-info strong {
+    font-size: 16px;
+}
+.cart-info small {
+    color: #777;
+    font-size: 12px;
+}
+.cart-price {
+    font-size: 17px;
+    font-weight: bold;
+    color: #bd1732;
+    white-space: nowrap;
+}
+.cart-line .cart-remove {
+    background: transparent;
+    border: 1px solid #c82038;
+    border-radius: 4px;
+    color: #b82035;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.cart-line .cart-remove:hover {
+    background: #c82038;
+    color: white;
+}
+.cart-bottom {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 16px;
+    padding: 22px;
+    background: #fffafa;
+    border: 1px solid #efc3c3;
+    border-radius: 8px;
+}
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+}
+.cart-summary strong {
+    color: #bd1732;
+}
+.cart-note {
+    color: #777;
+    font-size: 12px;
+    margin: 12px 0;
+}
+.cart-bottom .checkout {
+    margin-top: 12px;
+}
+.cart-bottom .checkout:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+.cart-empty {
+    background: #fffafa;
+    border-radius: 8px;
+    text-align: center;
+    padding: 50px 20px;
+}
+.cart-empty h2 {
+    color: #b82035;
+    font-size: 23px;
+}
+.cart-empty p {
+    margin-bottom: 25px;
+}
+.cart-empty a {
+    text-decoration: none;
+}
+@media (max-width: 700px) {
+    .cart-section {
+        padding: 25px 12px 35px;
+    }
+    .cart-title {
+        font-size: 25px;
+    }
+    .cart-subtitle {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+    .cart-line {
+        gap: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    .cart-photo {
+        width: 85px;
+        height: 85px;
+    }
+    .cart-info strong {
+        font-size: 13px;
+    }
+    .cart-price {
+        font-size: 14px;
+    }
+    .cart-line .cart-remove {
+        margin-left: auto;
+        padding: 6px 9px;
+    }
+    .cart-bottom {
+        padding: 17px;
+    }
+}
+
+/* Checkout page */
+.checkout-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px 70px;
+}
+.checkout-page h1 {
+  text-align: center;
+  color: #bd1f2d;
+}
+.checkout-page > p {
+  text-align: center;
+}
+.checkout-layout {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+}
+.checkout-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1;
+}
+.checkout-box h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.checkout-box label {
+  display: block;
+  margin-top: 15px;
+}
+.checkout-box input,
+.checkout-box select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+.checkout-help {
+  font-size: 13px;
+  margin-top: 20px;
+}
+#checkoutNotice {
+  margin-top: 15px;
+}
+@media (max-width: 700px) {
+  .checkout-layout {
+    flex-direction: column;
+  }
+}
+
+/* Delivery address on checkout */
+#deliveryAddress[hidden] {
+  display: none;
+}
+#deliveryAddress h2 {
+  margin-top: 25px;
+}
+
+/* Hamburger button stays visible when mobile menu is open */
+.drawer-close {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .mobile-drawer.open .drawer-close {
+        display: flex;
+        position: fixed;
+        top: 16px;
+        right: 18px;
+        z-index: 250;
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: transparent;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .drawer-close span {
+        display: block;
+        width: 32px;
+        height: 3px;
+        background-color: #888888;
+        border-radius: 2px;
+    }
+}
